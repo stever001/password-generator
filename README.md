@@ -16,3 +16,9 @@ The purpose of this simple password generator is for a user to have the ability 
 
  ## Screen Shot
 ![Image of Password Generator App](Assets/03-javascript-homework-demo.png)
+
+## Contact Me Wih Questions or Comments
+You may contact me with any questions regarding this app at:
+
+steve17rouse@gmail.com
+208.794.2800
