@@ -1,7 +1,7 @@
-// Assignment Code
+
 var generateBtn = document.querySelector("#generate");
 
-// Character sets for password generation
+// Character set arrays for password generation
 var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberChars = "0123456789";
@@ -10,9 +10,9 @@ var specialChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 // Function to generate a random password
 function generatePassword() {
   var length = prompt("Enter the length of the password (between 8 and 128 characters):");
-
+// If user cancels the input
   if (length === null) {
-    return null; // User cancelled the input
+    return null; 
   }
 
   length = parseInt(length);
@@ -21,11 +21,12 @@ function generatePassword() {
     alert("Please enter a valid password length between 8 and 128 characters.");
     return null;
   }
-
+//user questions. "Confirm" means yes, "Cancel" means no
   var useLowercase = confirm("Include lowercase characters?");
   var useUppercase = confirm("Include uppercase characters?");
   var useNumbers = confirm("Include numeric characters?");
   var useSpecialChars = confirm("Include special characters?");
+
 
   if (!useLowercase && !useUppercase && !useNumbers && !useSpecialChars) {
     alert("Please select at least one character type for the password.");
@@ -51,11 +52,10 @@ function generatePassword() {
     var randomIndex = Math.floor(Math.random() * allowedChars.length);
     password += allowedChars.charAt(randomIndex);
   }
-
   return password;
 }
 
-// Write password to the #password input
+// Write password to the #password box. User can then copy it to his application for use
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -65,5 +65,5 @@ function writePassword() {
   }
 }
 
-// Add event listener to generate button
+// Add event listener (click) to generate button
 generateBtn.addEventListener("click", writePassword);
